@@ -5,6 +5,7 @@ Instructions from David that worked for me:
 
 2nd. create exogenesis.json:
 `nano /home/[user]/pblock/exogenesis.json`
+
 content:
 ```
 {
@@ -19,6 +20,7 @@ content:
 }
 ```
 3rd init geth with new datadir flag, just change a random networkid:
+
 `geth --datadir /home/[user]/pblock/exochain1 init /home/[user]/pblock/genesis.json`
 
 4th launch geth with this standard config:
@@ -30,13 +32,16 @@ geth --identity "Exonet" --rpc --rpcport "8545" --rpccorsdomain "*" --datadir /h
 
 `web3.personal.newAccount("password")`
 
+
 6th. exit and restart the node adding this new flags to unlock account:
 
 `--unlock "yourAccount" --password <(echo password)`
 
+
 optional: add this flags to accept any tx on the miner:
 
 `--gpomin "1"   --gpomax "500000000000"`
+
 
 7th, in another console start ethminer, just type:
 `ethminer`
