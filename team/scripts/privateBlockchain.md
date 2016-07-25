@@ -19,11 +19,12 @@ content:
     }
 }
 ```
-3rd init geth with new datadir flag, just change a random networkid:
+3rd init geth with new all flags, just change a random networkid:
+```
+geth --identity "Exonet" --rpc --rpcport "8545" --rpccorsdomain "*" --datadir /home/[user]/pblock/exochain1 --port "30303" --nodiscover --ipcapi "admin,db,eth,debug,miner,net,shh,txpool,personal,web3" --rpcapi "personal,db,eth,net,web3" --networkid 1575 --nat "any" init /home/[user]/pblock/genesis.json
+```
 
-`geth --datadir /home/[user]/pblock/exochain1 init /home/[user]/pblock/genesis.json`
-
-4th launch geth with this standard config:
+4th restart geth and attach to console:
 ```
 geth --identity "Exonet" --rpc --rpcport "8545" --rpccorsdomain "*" --datadir /home/[user]/pblock/exochain1 --port "30303" --nodiscover --ipcapi "admin,db,eth,debug,miner,net,shh,txpool,personal,web3" --rpcapi "personal,db,eth,net,web3" --networkid 1575 --nat "any" --verbosity 0 console
 ```
