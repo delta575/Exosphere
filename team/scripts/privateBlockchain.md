@@ -1,5 +1,15 @@
 Instructions from David that worked for me:
 
+Requirements: geth and ethminer:
+```
+sudo add-apt-repository ppa:ethereum/ethereum-qt
+sudo add-apt-repository ppa:ethereum/ethereum
+sudo apt-get update
+sudo apt-get install software-properties-common
+sudo apt-get install ethereum
+sudo apt-get install cpp-ethereum
+```
+
 1st. make a folder outside .ethereum (to avoid problems)
 `mkdir /home/[user]/pblock`
 
@@ -44,13 +54,6 @@ optional: add this flags to accept any tx on the miner:
 `--gpomin "1"   --gpomax "500000000000"`
 
 
-7th, in another console start ethminer, first to install:
-```
-sudo add-apt-repository ppa:ethereum/ethereum-qt
-sudo add-apt-repository ppa:ethereum/ethereum
-sudo apt-get update
-sudo apt-get install cpp-ethereum
-```
-then just type `ethminer` in an independent console and it should hook up to geth on port 8545 (remember the flag `--rpcport "8545"`)
+7th, Just type `ethminer` in an independent console and it should hook up to geth on port 8545 (remember the flag `--rpcport "8545"`)
 
 Aaaaand should be done now... watch web3.eth.blockNumber and balance go up!
