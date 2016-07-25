@@ -44,9 +44,13 @@ optional: add this flags to accept any tx on the miner:
 `--gpomin "1"   --gpomax "500000000000"`
 
 
-7th, in another console start ethminer, just type:
-`ethminer`
+7th, in another console start ethminer, first to install:
+```
+sudo add-apt-repository ppa:ethereum/ethereum-qt
+sudo add-apt-repository ppa:ethereum/ethereum
+sudo apt-get update
+sudo apt-get install cpp-ethereum
+```
+then just type `ethminer` in an independent console and it should hook up to port 8545
 
-Should be done now... watch web3.eth.blockNumber and balance go up!
-
-todo: instruction to install ethminer (cpp-ethereum)
+Aaaaand should be done now... watch web3.eth.blockNumber and balance go up!
