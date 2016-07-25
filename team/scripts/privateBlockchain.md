@@ -22,12 +22,16 @@ content:
 `geth --datadir /home/[user]/pblockchain/exochain1 init /home/[user]/pblockchain/genesis.json`
 
 4th launch geth with this standard config:
-```geth --identity "Exonet" --rpc --rpcport "8545" --rpccorsdomain "*" --datadir /home/osboxes/pblock/exochain1 --port "30303" --nodiscover --ipcapi "admin,db,eth,debug,miner,net,shh,txpool,personal,web3" --rpcapi "personal,db,eth,net,web3" --networkid 1575 --nat "any" --verbosity 0 console```
+```
+geth --identity "Exonet" --rpc --rpcport "8545" --rpccorsdomain "*" --datadir /home/osboxes/pblock/exochain1 --port "30303" --nodiscover --ipcapi "admin,db,eth,debug,miner,net,shh,txpool,personal,web3" --rpcapi "personal,db,eth,net,web3" --networkid 1575 --nat "any" --verbosity 0 console
+```
 
-5th. Inside just create a new account `web3.personal.newAccount("password")`
+5th. Inside just create a new account
+`web3.personal.newAccount("password")`
 
 6th. exit and restart the node
 
-7th, in another console start ethminer, just type `ethminer`
+7th, in another console start ethminer, just type:
+`ethminer`
 
 Should be done now... watch web3.eth.blockNumber go up
