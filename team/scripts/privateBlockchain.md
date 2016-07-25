@@ -27,11 +27,15 @@ geth --identity "Exonet" --rpc --rpcport "8545" --rpccorsdomain "*" --datadir /h
 ```
 
 5th. Inside just create a new account and copy the output
+
 `web3.personal.newAccount("password")`
 
 6th. exit and restart the node adding this new flags to unlock account:
+
 `--unlock "yourAccount" --password <(echo password)`
+
 optional: add this flags to accept any tx on the miner:
+
 `--gpomin "1"   --gpomax "500000000000"`
 
 7th, in another console start ethminer, just type:
