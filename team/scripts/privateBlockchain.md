@@ -6,7 +6,7 @@ Instructions from David that worked for me:
 2nd. create exogenesis.json:
 `nano /home/[user]/pblockchain/exogenesis.json`
 content:
-
+```
 {
    "nonce": "0x0000000000000042",     "timestamp": "0x0",
    "parentHash": "0x00000000000000000000000000000000000000000000000000000000000",
@@ -17,7 +17,7 @@ content:
     {
     }
 }
-
+```
 3rd init geth with new datadir flag, just change a random networkid:
 `geth --datadir /home/[user]/pblockchain/exochain1 init /home/[user]/pblockchain/genesis.json`
 
