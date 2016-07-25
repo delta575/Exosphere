@@ -51,6 +51,6 @@ sudo add-apt-repository ppa:ethereum/ethereum
 sudo apt-get update
 sudo apt-get install cpp-ethereum
 ```
-then just type `ethminer` in an independent console and it should hook up to port 8545
+then just type `ethminer` in an independent console and it should hook up to geth on port 8545 (remember the flag `--rpcport "8545"`)
 
 Aaaaand should be done now... watch web3.eth.blockNumber and balance go up!
