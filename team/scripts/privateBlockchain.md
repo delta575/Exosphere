@@ -47,3 +47,5 @@ optional: add this flags to accept any tx on the miner:
 `ethminer`
 
 Should be done now... watch web3.eth.blockNumber and balance go up!
+
+todo: instruction to install ethminer (cpp-ethereum)
