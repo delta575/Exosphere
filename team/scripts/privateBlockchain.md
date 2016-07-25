@@ -1,10 +1,10 @@
 Instructions from David that worked for me:
 
 1st. make a folder outside .ethereum (to avoid problems)
-`mkdir /home/[user]/pblockchain`
+`mkdir /home/[user]/pblock`
 
 2nd. create exogenesis.json:
-`nano /home/[user]/pblockchain/exogenesis.json`
+`nano /home/[user]/pblock/exogenesis.json`
 content:
 ```
 {
@@ -19,19 +19,22 @@ content:
 }
 ```
 3rd init geth with new datadir flag, just change a random networkid:
-`geth --datadir /home/[user]/pblockchain/exochain1 init /home/[user]/pblockchain/genesis.json`
+`geth --datadir /home/[user]/pblock/exochain1 init /home/[user]/pblock/genesis.json`
 
 4th launch geth with this standard config:
 ```
-geth --identity "Exonet" --rpc --rpcport "8545" --rpccorsdomain "*" --datadir /home/osboxes/pblock/exochain1 --port "30303" --nodiscover --ipcapi "admin,db,eth,debug,miner,net,shh,txpool,personal,web3" --rpcapi "personal,db,eth,net,web3" --networkid 1575 --nat "any" --verbosity 0 console
+geth --identity "Exonet" --rpc --rpcport "8545" --rpccorsdomain "*" --datadir /home/[user]/pblock/exochain1 --port "30303" --nodiscover --ipcapi "admin,db,eth,debug,miner,net,shh,txpool,personal,web3" --rpcapi "personal,db,eth,net,web3" --networkid 1575 --nat "any" --verbosity 0 console
 ```
 
-5th. Inside just create a new account
+5th. Inside just create a new account and copy the output
 `web3.personal.newAccount("password")`
 
-6th. exit and restart the node
+6th. exit and restart the node adding this new flags to unlock account:
+`--unlock "yourAccount" --password <(echo password)`
+optional: add this flags to accept any tx on the miner:
+`--gpomin "1"   --gpomax "500000000000"`
 
 7th, in another console start ethminer, just type:
 `ethminer`
 
-Should be done now... watch web3.eth.blockNumber go up
+Should be done now... watch web3.eth.blockNumber and balance go up!
